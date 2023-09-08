@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(window).on('load', function() {
   // Obtén la referencia al elemento div con la clase "relative"
   var videoContainer = $('.vtex-slider-layout-0-x-videoContainer');
 
