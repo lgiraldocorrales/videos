@@ -1,4 +1,4 @@
-$(window).on('load', function() {
+$(document).ready(function() {
   // Obtén la referencia al elemento div con la clase "relative"
   var videoContainer = $('.vtex-slider-layout-0-x-videoContainer');
 
@@ -12,4 +12,9 @@ $(window).on('load', function() {
 
   // Envuelve el elemento 'video' con la etiqueta 'a'
   videoElement.wrap(link);
+
+  // Evitar la recarga de página cuando se hace clic en el enlace
+  link.on('click', function(event) {
+    event.preventDefault();
+  });
 });
