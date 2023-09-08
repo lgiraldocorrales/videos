@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   // Crea una etiqueta 'a' y establece el atributo 'href'
   var link = $('<a></a>', {
-    href: 'wellness-club', // Reemplaza con la URL de destino que deseas
+    href: 'https://www.spirito.com.co/wellness-club', // Reemplaza con la URL de destino que deseas
   });
 
   // Inserta la etiqueta 'a' antes de la etiqueta 'video' dentro del div
