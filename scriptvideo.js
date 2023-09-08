@@ -1,16 +1,8 @@
-function waitForElementToExist(selector, callback) {
-  var interval = setInterval(function() {
-    var element = $(selector);
-    if (element.length) {
-      clearInterval(interval);
-      callback(element);
-    }
-  }, 100); // Comprobar cada 100 milisegundos
-}
+$(document).ready(function() {
+  // Este código se ejecutará cuando el DOM esté completamente cargado.
 
-// Espera a que exista un elemento con la clase vtex-slider-layout-0-x-videoContainer
-waitForElementToExist('.vtex-slider-layout-0-x-videoContainer', function(videoContainer) {
-  // Tu código jQuery aquí
+  // Obtén la referencia al elemento div con la clase "relative"
+  var videoContainer = $('.vtex-slider-layout-0-x-videoContainer');
 
   // Crea una etiqueta 'a' y establece el atributo 'href' con una URL válida
   var link = $('<a></a>', {
@@ -23,3 +15,4 @@ waitForElementToExist('.vtex-slider-layout-0-x-videoContainer', function(videoCo
   // Envuelve el elemento 'video' con la etiqueta 'a'
   videoElement.wrap(link);
 });
+
