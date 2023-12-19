@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Divertida</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<style>
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #5d55fa;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    margin: 20px 0;
+}
+
+.button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #fc4a1a;
+}
+
+#message {
+    margin-top: 20px;
+    color: #38ada9;
+    font-size: 20px;
+}
+
+</style>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function() {
+    $('#yesButton').click(function() {
+        $('#message').text('¡Obvio no se iba a negar bb!');
+        // Ocultar botones Sí y No, mostrar botón de reinicio
+        $('#yesButton').hide();
+        $('#noButton').hide();
+        $('#restartButton').show();
+    });
+
+    $('#noButton').mouseover(function() {
+        var newLeft = Math.random() * ($(window).width() - $(this).outerWidth());
+        var newTop = Math.random() * ($(window).height() - $(this).outerHeight());
+
+        $(this).css({
+            position: 'absolute',
+            left: newLeft,
+            top: newTop
+        });
+    });
+
+    // Funcionalidad para el botón de reinicio
+    $('#restartButton').click(function() {
+        $('#message').text('');
+        $('#yesButton').show();
+        $('#noButton').show();
+        $(this).hide();
+    });
+});
+</script>
+<body>
+    <div class="container">
+        <h1>¿Quieres salir a pedir monedas y comer buñuelos el jueves?</h1>
+		<div class="button-container">
+			<button id="yesButton" class="button">Sí</button>
+			<button id="noButton" class="button">No</button>
+			<!-- Nuevo botón para reiniciar, inicialmente oculto -->
+			<button id="restartButton" class="button" style="display:none;">Si no estás seguro, presiona acá</button>
+		</div>
+        <p id="message"></p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
